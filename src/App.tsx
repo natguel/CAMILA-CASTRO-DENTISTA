@@ -146,8 +146,10 @@ export default function App() {
                 referrerPolicy="no-referrer"
               />
             </div>
-            <div className="absolute -bottom-6 -right-6 glass-card p-6 rounded-xl hidden md:block">
-              <p className="text-brand-brown-dark font-serif italic text-lg">"O sorriso é a janela da alma."</p>
+            <div className="absolute -bottom-6 -right-6 glass-card p-6 rounded-xl hidden md:block max-w-xs">
+              <p className="text-brand-brown-dark font-serif italic text-sm leading-relaxed">
+                "Acredito em uma odontologia feita com escuta, respeito e verdade. Cada sorriso carrega uma história, e meu papel é cuidar dela com técnica, sensibilidade e resultados naturais."
+              </p>
             </div>
           </motion.div>
 
@@ -215,39 +217,41 @@ export default function App() {
         </div>
       </section>
 
-      {/* 4. POR QUE CONFIAR EM MIM? */}
+      {/* 4. MEUS SERVIÇOS */}
       <section className="section-padding bg-white">
         <div className="max-w-5xl mx-auto">
-          <SectionTitle title="Sua Segurança em Primeiro Lugar" subtitle="Autoridade" />
+          <SectionTitle title="Soluções Sob Medida" subtitle="Meus Serviços" />
           
           <div className="grid md:grid-cols-3 gap-8">
             <div className="glass-card p-8 rounded-2xl text-center flex flex-col items-center">
               <div className="w-16 h-16 bg-brand-beige rounded-full flex items-center justify-center mb-6">
-                <UserRound className="text-brand-brown" size={32} />
+                <Sparkles className="text-brand-brown" size={32} />
               </div>
-              <h3 className="text-xl font-semibold mb-4">Experiência</h3>
-              <p className="text-brand-brown-dark/70 text-sm leading-relaxed">
-                Anos dedicados ao aperfeiçoamento constante em técnicas de reabilitação e estética.
-              </p>
+              <h3 className="text-xl font-semibold mb-4">Estética Avançada</h3>
+              <ul className="text-brand-brown-dark/70 text-sm space-y-2">
+                <li>Lentes em porcelana</li>
+                <li>Estética em resina</li>
+                <li>Clareamento dental</li>
+              </ul>
             </div>
             
             <div className="glass-card p-8 rounded-2xl text-center flex flex-col items-center border-brand-brown/10">
               <div className="w-16 h-16 bg-brand-beige rounded-full flex items-center justify-center mb-6">
-                <Sparkles className="text-brand-brown" size={32} />
+                <UserRound className="text-brand-brown" size={32} />
               </div>
-              <h3 className="text-xl font-semibold mb-4">Tecnologia</h3>
+              <h3 className="text-xl font-semibold mb-4">Reabilitação Oral</h3>
               <p className="text-brand-brown-dark/70 text-sm leading-relaxed">
-                Utilizamos os melhores materiais e equipamentos para garantir resultados duradouros.
+                Tratamentos complexos para devolver a função e a harmonia do seu sorriso.
               </p>
             </div>
             
             <div className="glass-card p-8 rounded-2xl text-center flex flex-col items-center">
               <div className="w-16 h-16 bg-brand-beige rounded-full flex items-center justify-center mb-6">
-                <MapPin className="text-brand-brown" size={32} />
+                <CheckCircle2 className="text-brand-brown" size={32} />
               </div>
-              <h3 className="text-xl font-semibold mb-4">Localização</h3>
+              <h3 className="text-xl font-semibold mb-4">Prevenção</h3>
               <p className="text-brand-brown-dark/70 text-sm leading-relaxed">
-                Consultório premium no coração do Cambuí, em Campinas, com todo conforto.
+                Cuidado contínuo para manter a saúde bucal e a longevidade dos seus resultados.
               </p>
             </div>
           </div>
@@ -265,27 +269,24 @@ export default function App() {
         </div>
       </section>
 
-      {/* 6. COMO FUNCIONA A PRIMEIRA CONSULTA */}
+      {/* 6. DÚVIDAS COMUNS */}
       <section className="section-padding bg-brand-beige">
         <div className="max-w-4xl mx-auto">
-          <SectionTitle title="Sua Jornada para o Novo Sorriso" subtitle="Como Funciona" />
+          <SectionTitle title="Esclareça Suas Dúvidas" subtitle="Dúvidas Comuns" />
           
           <div className="grid gap-6">
             {[
               {
-                step: "01",
-                title: "Contato via WhatsApp",
-                desc: "Clique no botão e fale diretamente com minha equipe para tirar dúvidas iniciais."
+                title: "Como funciona o atendimento?",
+                desc: "Atendimento individualizado, com avaliação completa e plano de tratamento personalizado, respeitando suas necessidades e sua história."
               },
               {
-                step: "02",
-                title: "Agendamento",
-                desc: "Escolha o melhor horário para sua avaliação personalizada."
+                title: "Como agendar uma consulta?",
+                desc: "O agendamento é feito de forma simples pelo WhatsApp."
               },
               {
-                step: "03",
-                title: "Avaliação Personalizada",
-                desc: "No consultório, faremos uma análise completa e traçaremos seu plano de tratamento."
+                title: "Atende convênio?",
+                desc: "Não, somente atendimento particular. Mas você pode solicitar reembolso no seu convênio."
               }
             ].map((item, i) => (
               <motion.div 
@@ -294,13 +295,13 @@ export default function App() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
-                className="flex items-start gap-6 bg-white p-8 rounded-2xl shadow-sm"
+                className="bg-white p-8 rounded-2xl shadow-sm"
               >
-                <span className="text-4xl font-serif text-brand-brown-light/30 font-bold leading-none">{item.step}</span>
-                <div>
-                  <h3 className="text-xl font-semibold mb-2 text-brand-brown-dark">{item.title}</h3>
-                  <p className="text-brand-brown-dark/70">{item.desc}</p>
-                </div>
+                <h3 className="text-xl font-semibold mb-3 text-brand-brown-dark flex items-center gap-3">
+                  <div className="w-2 h-2 bg-brand-brown rounded-full"></div>
+                  {item.title}
+                </h3>
+                <p className="text-brand-brown-dark/70 leading-relaxed">{item.desc}</p>
               </motion.div>
             ))}
           </div>
@@ -310,7 +311,7 @@ export default function App() {
       {/* 7. MAIS PROVAS (Bastidores) */}
       <section className="section-padding bg-white overflow-hidden">
         <div className="max-w-6xl mx-auto">
-          <SectionTitle title="Excelência em cada detalhe" subtitle="Experiência Camila Castro" />
+          <SectionTitle title="Cuidado e Precisão" subtitle="Experiência Camila Castro" />
           
           <div className="flex gap-4 overflow-x-auto pb-8 snap-x scrollbar-hide">
             {IMAGES.authority.slice(1).map((img, index) => (
